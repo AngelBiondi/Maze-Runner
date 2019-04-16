@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "stranger";
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/161676/BenguiatProITC-BoldCond.woff")
+    format("woff");
+  font-weight: bold;
+}
+
+h1 {
+  animation: zoom 20s linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 0.08em rgba(#F75037,0.5));
+  font-family: "stranger", georgia, serif;
+  font-size: 15vw;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke: 0.02em $color;
+  text-transform: uppercase;
+  width: 5em;
+  text-align: center;
+  margin: 30vmin auto 0;
+  letter-spacing: -0.01em;
+  mix-blend-mode: screen;
+  .stranger {
+    display: block;
+    line-height: 0.8;
+    &:before {
+      filter: drop-shadow(0 0 0.08em rgba(#F75037,0.4));
+      content: "";
+      border: 0.02em solid $color;
+      height: 0.03em;
+      display: block;
+      width: 100%;
+      border-radius: 3px;
+    }
+   
+  }
+}
+@keyframes zoom {
+  from {
+    transform: scale(0.7);
+  }
+}
+
+h2 { 
+    font-family: Monofett; 
+    font-size: 80px; font-style: normal;
+     font-variant: normal;
+     font-weight: 600; 
+     line-height: 20px; 
+    text-align: center;
+}
+
+
+body {
+
+    /* animation: colorchange 120s; /* animation-name followed by duration in seconds*/
+       /* you could also use milliseconds (ms) or something like 2.5s */
+    /* -webkit-animation: colorchange 120  s;  Chrome and Safari 
+    animation-iteration-count: infinite;  */
+    background-image: url(./preview_image.jpg);
+    background-position: cover;
+     &:before {
+    content:"";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-size: cover;
+    filter: blur(20px);
+    opacity: 0.3;
+  }
+  }
+
+
+  .container{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+  @keyframes colorchange
+  {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    75%  {background: green;}
+    100% {background: red;}
+  }
+
+  @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+  {
+    0%   {background: red;}
+    25%  {background: yellow;}
+    50%  {background: blue;}
+    75%  {background: green;}
+    100% {background: red;}
+  }
+
+
+
+
+#Start {
+  width: 700px;
+  height: 540px;
+  border: none;
+  background: green;
+  color: #ffffff !important;
+  font-weight: 100;
+  font-size: 120px;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  }
+  
+  #Start:hover {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+  }
+
+  
+#restart {
+  width: 230px;
+  height: 120px;
+  border: none;
+  background:green;
+  color: #ffffff !important;
+  font-weight: 100;
+  font-size: 40px;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  }
+  
+  #restart:hover {
+  color: #000000 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+  }
+
+  
