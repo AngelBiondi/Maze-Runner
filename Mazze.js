@@ -8,20 +8,25 @@
         var mazeWidth = 556;
         var mazeHeight = 556;
         var intervalVar;
+        var picture = "mazetwo.png"
         function drawMazeAndRectangle(rectX, rectY) {
             makeWhite(0, 0, canvas.width, canvas.height);
             var mazeImg = new Image();
             var img = new Image();
             mazeImg.onload = function () {
-                context.drawImage(mazeImg, 0, 0);
+                context.drawImage(mazeImg, 0, 0, canvas.width-60, canvas.height);
                 drawRectangle(rectX, rectY, "blue");
                 context.beginPath();
-                context.arc(542, 122, 7, 0, 2 * Math.PI, false);
-                context.closePath();
-                context.fillStyle = '#00FF00';
-                context.fill();
+                // context.arc(542, 122, 7, 0, 2 * Math.PI, false);
+                // setInterval(() => {
+                    context.arc(Math.random()*canvas.width, Math.random()*canvas.height, 7, 0, 2 * Math.PI, false)
+                    context.closePath();
+                    context.fillStyle = '#00FF00';
+                    context.fill()
+                // }, 100)
+;
             };
-            mazeImg.src = "maze.png";
+            mazeImg.src = picture;
             
         }
 
@@ -82,11 +87,16 @@
                 context.textBaseline = "middle";
                 $('canvas').hide()
                 //Jquery
-                $('body').append('<h2>Congratulations!</h2>')
+                $('body').append('<h2 id="congrats">Congratulations!</h2>')
+                picture = "mazethree.png";
                 $("#restart").show(1200);
                 //end jquery
                 window.removeEventListener("keydown", moveRect, true);
+
             }
+            //$('#congrats').remove()
+
+           
         }
         function canMoveTo(destX, destY) {
             context.crossOrigin = "Anonymous";
@@ -122,17 +132,18 @@
                     context.fillStyle = "red";
                     context.textAlign = "center";
                     context.textBaseline = "middle";
+                    new Audio('./itt.mp3').play()
                     $('canvas').hide()
                    //Jquery
                     $('body').append(`<h2 id='slow'>Too Slow!</h2>`)
+                    picture = "maze.png";
                     $("#restart").show(1200);
-                    //end Jquery
-                  return; 
                     
+                    //end Jquery
+                  return;     
                 }
                 //Jquery. delete the "too slow" when you click on play again 
                 $('#slow').remove()
-
 
                 context.font = "20px Arial";
                 if (seconds <= 10 && seconds > 5) {
@@ -155,7 +166,16 @@
                 seconds--;
             }, 1000);
         }
-    
+        
+        // function timer(){
+        //     let seconds = 0;
+        //     let int = setInterval(function(){
+        //         seconds++;
+        //         document.getElementById('timer').innerText = seconds
+                
+        //     },1000)
+        // }
+        
         function makeWhite(x, y, w, h) {
             context.beginPath();
             context.rect(x, y, w, h);
@@ -168,6 +188,6 @@
         function StartGame(){
         drawMazeAndRectangle(425, 3);
         window.addEventListener("keydown", moveRect, true);
-        createTimer(05); // 2 minutes
+        createTimer(90); // 1.5 minutes
         $('canvas').show()
         }

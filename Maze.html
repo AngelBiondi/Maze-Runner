@@ -20,7 +20,6 @@
      <div class="container">
             <canvas width="616" height="556" id="mazecanvas"> 
                 Can't load the maze game, because your browser doesn't support HTML5.</canvas> 
-<!-- 616 -->
      </div>
     <noscript>JavaScript is not enabled. To play the game, you should enable it.</noscript>
     <script src="./Mazze.js"></script>
@@ -28,11 +27,15 @@
      <script>
      $("#Start").click(function() {
         StartGame();
+        new Audio('./tbut.mp3').play()
         $("#Start, #mazeRunner").hide(1200);
      });
+     
      $("#restart").click(function() {
         StartGame();
+        new Audio('./tbut.mp3').play()
         $("#restart").hide(1200);
+        $('#congrats').remove();
      });
      </script>
 
